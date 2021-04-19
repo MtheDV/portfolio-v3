@@ -1,0 +1,27 @@
+
+.intro {
+  grid-column: 3 / -1;
+  position: relative;
+  height: 27rem;
+  margin-top: 16rem;
+}
+
+.header {
+  position: absolute;
+}
+
+.star {
+  width: 15rem;
+  height: auto;
+  position: absolute;
+  bottom: 1rem;
+  right: 10.25rem;
+}
+
+.circleText {
+  width: 8rem;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 14rem;
+}

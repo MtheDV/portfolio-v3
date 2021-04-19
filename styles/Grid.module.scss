@@ -1,0 +1,18 @@
+
+$grid-width: 5.4rem;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  max-width: $grid-width * 12 + 11 * 1.25rem;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  box-sizing: content-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, $grid-width));
+  column-gap: 1.25rem;
+  justify-content: center;
+}
