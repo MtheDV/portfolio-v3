@@ -8,6 +8,7 @@ export const spin = (target, {amount, duration, repeat}) => {
     rotate: amount || 360,
     duration: duration || 1,
     ease: 'none',
-    repeat: repeat || -1
+    repeat: repeat || -1,
+    transformOrigin: "50% 50%"
   });
 };

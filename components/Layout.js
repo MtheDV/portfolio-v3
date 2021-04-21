@@ -4,7 +4,7 @@ import gridStyles from '../styles/Grid.module.scss';
 
 const Layout = ({children}) => {
   return (
-    <div className={gridStyles.layout}>
+    <div className={gridStyles.layout} aria-label='layout'>
       {children}
     </div>
   );
