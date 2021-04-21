@@ -17,7 +17,7 @@ const Landing = () => {
   return (
     <section className={gridStyles.container}>
       <h1 className={landingStyles.hideText}>mathew de vin</h1>
-      <object className={landingStyles.introTextStar} type='image/svg+xml'>
+      <div className={landingStyles.introTextStar}>
       <svg width="100%" height="100%" viewBox="0 0 1411 679" version="1.1" xmlns="http://www.w3.org/2000/svg"
            style={{fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: 2}}
            >
@@ -90,7 +90,7 @@ const Landing = () => {
           </g>
         </g>
       </svg>
-      </object>
+      </div>
       <p className={landingStyles.sub}>creative front-end developer.</p>
     </section>
   );
