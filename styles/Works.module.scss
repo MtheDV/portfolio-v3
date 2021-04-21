@@ -1,0 +1,27 @@
+.headerText {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: auto;
+  margin: 25rem 0 0;
+  color: white;
+}
+
+.hideText {
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.worksList {
+  grid-column: 1 / -1;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    font-size: 6rem;
+    color: #121212;
+    text-shadow: -0.04rem -0.04rem 0 #FFF, 0.04rem -0.04rem 0 #FFF, -0.04rem 0.04rem 0 #FFF, 0.04rem 0.04rem 0 #FFF;
+  }
+}

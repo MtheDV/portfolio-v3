@@ -33,3 +33,7 @@ export const eachShrink = (targets, amount) => {
     });
   }
 };
+
+export const scrollThroughWorks = (targets) => {
+  
+}

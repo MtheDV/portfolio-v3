@@ -1,6 +1,7 @@
 import Head from 'next/head'
 // components
 import Landing from '../components/Landing';
+import Works from "../components/Works";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </Head>
       <main>
         <Landing/>
+        <Works/>
       </main>
     </>
   )

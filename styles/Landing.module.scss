@@ -1,46 +1,9 @@
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-  @-o-keyframes #{$animation-name} {
-    @content;
-  }
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
-}
-
-@include keyframes(animation-shrink) {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0.8);
-  }
-}
-
-
 .introTextStar {
   grid-column: 1 / -1;
   width: 100%;
   height: auto;
   margin: 5rem 0 0;
   color: white;
-}
-
-.introTextStarLetter {
-  cursor: pointer;
 }
 
 .sub {
