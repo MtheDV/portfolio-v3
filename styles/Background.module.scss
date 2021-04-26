@@ -7,16 +7,16 @@ $black: #121212;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -200;
+  z-index: 0;
   background-color: $black;
 }
 
 .orb {
-  position: absolute;
-  top: -25rem;
-  left: -20rem;
-  width: 60rem;
-  height: 60rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40rem;
+  height: 40rem;
   background-image: linear-gradient(to right, #FF2424, #7242FF);
   border-radius: 50%;
   filter: blur(100px);

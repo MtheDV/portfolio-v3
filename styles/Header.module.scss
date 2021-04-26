@@ -1,47 +1,16 @@
 
 .header {
   position: sticky;
-  top: 4rem;
-  margin-top: 4rem;
-
+  top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   width: 100%;
-  height: 2.25rem;
-  grid-column: 1 / -1;
-  grid-row: 1 / span 1;
+  height: 1.5rem;
 
   img {
-    width: 2rem;
+    width: 1.75rem;
     height: auto;
-  }
-
-  .header__nav {
-    a {
-      font-size: 1.75rem;
-      margin-left: 1.5rem;
-      position: relative;
-      letter-spacing: normal;
-
-      &:after {
-        content: '';
-        width: 100%;
-        height: 1px;
-        background-color: white;
-        position: absolute;
-        bottom: -0.1rem;
-        left: 0;
-        transition: all .2s cubic-bezier(.68,-0.55,.27,1.55);
-        transform: scaleX(0);
-      }
-
-      &:hover {
-        &:after {
-          transform: scaleX(1);
-        }
-      }
-    }
   }
 }
