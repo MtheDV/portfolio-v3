@@ -128,12 +128,14 @@ export const scrollThroughWorks = (targets) => {
       child,
       {
         opacity: 0,
+        duration: 0.5,
       },
       {
         opacity: 1,
       }
     ).to(child, {
       opacity: 0,
+      delay: 0.5,
     });
   }
 };

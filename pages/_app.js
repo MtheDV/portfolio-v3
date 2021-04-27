@@ -2,7 +2,7 @@ import "../styles/globals.scss";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Background from "../components/Background";
-import {useState} from "react";
+import { useState } from "react";
 
 const useMouseMove = () => {
   const [state, setState] = useState({ x: 0, y: 0 });
@@ -13,7 +13,7 @@ const useMouseMove = () => {
 
   const handleMouseLeave = () => {
     setState((state) => ({ ...state, x: undefined, y: undefined }));
-  }
+  };
 
   return { x: state.x, y: state.y, handleMouseMove, handleMouseLeave };
 };
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <Component {...pageProps} />
       </Layout>
-      <Background mouseX={x} mouseY={y}/>
+      <Background mouseX={x} mouseY={y} />
     </div>
   );
 }
