@@ -4,7 +4,7 @@ import Head from "next/head";
 import Landing from "../components/Landing";
 import Works from "../components/Works";
 
-export default function Home({ projects }) {
+export default function Home({ projects, mouseX, mouseY }) {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ export default function Home({ projects }) {
       </Head>
       <main>
         <Landing />
-        <Works projects={projects} />
+        <Works projects={projects} mouseX={mouseX} mouseY={mouseY}/>
       </main>
     </>
   );

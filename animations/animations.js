@@ -14,7 +14,7 @@ export const spin = (target, { amount, duration, repeat }) => {
 };
 
 export const transform = (target, { x, y }) => {
-  gsap.to(target, {
+  gsap.timeline().to(target, {
     x: x,
     y: y,
     transformOrigin: "50% 50%",
@@ -31,12 +31,31 @@ export const opacity = (target, { final, duration }) => {
         scrub: true,
       },
     })
-    .to(target, {
-      opacity: final,
-      duration: duration,
-      delay: 2,
-      ease: "none",
-    });
+    .fromTo(
+      target,
+      {
+        opacity: 1 - final,
+      },
+      {
+        opacity: final,
+        duration: duration,
+        delay: 2,
+        ease: "none",
+      }
+    );
+};
+
+export const animatePreview = (target, { skewX, skewY, duration }) => {
+  gsap.timeline().fromTo(target, {
+    opacity: 0,
+    skewX: skewX,
+    skewY: skewY
+  }, {
+    opacity: 1,
+    skewX: 0,
+    skewY: 0,
+    duration: duration,
+  });
 };
 
 export const appearFromBottom = (target, { duration }) => {
@@ -124,18 +143,20 @@ export const scrollThroughWorks = (targets) => {
         invalidateOnRefresh: true,
       },
     });
-    timeline.fromTo(
-      child,
-      {
+    timeline
+      .fromTo(
+        child,
+        {
+          opacity: 0,
+          duration: 0.5,
+        },
+        {
+          opacity: 1,
+        }
+      )
+      .to(child, {
         opacity: 0,
-        duration: 0.5,
-      },
-      {
-        opacity: 1,
-      }
-    ).to(child, {
-      opacity: 0,
-      delay: 0.5,
-    });
+        delay: 0.5,
+      });
   }
 };

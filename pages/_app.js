@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
     <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <Layout>
         <Header />
-        <Component {...pageProps} />
+        <Component {...pageProps} mouseX={x} mouseY={y}/>
       </Layout>
       <Background mouseX={x} mouseY={y} />
     </div>

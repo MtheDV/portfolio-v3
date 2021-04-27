@@ -38,6 +38,7 @@ a {
     left: 0;
     transition: all .5s cubic-bezier(.68, -0.55, .27, 1.55);
     transform: scaleX(0);
+    pointer-events: none;
   }
 
   &:hover {
