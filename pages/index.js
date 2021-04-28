@@ -4,6 +4,7 @@ import Head from "next/head";
 import Landing from "../components/Landing";
 import Works from "../components/Works";
 import ScrollBanner from "../components/ScrollBanner";
+import About from "../components/About";
 
 export default function Home({ projects, mouseX, mouseY }) {
   return (
@@ -17,6 +18,7 @@ export default function Home({ projects, mouseX, mouseY }) {
         <ScrollBanner text={"CHECK ME OUT"}/>
         <Works projects={projects} mouseX={mouseX} mouseY={mouseY}/>
         <ScrollBanner text={"WHO AM I?"}/>
+        <About />
       </main>
     </>
   );

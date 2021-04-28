@@ -1,0 +1,26 @@
+
+.headerText {
+  grid-column: 2 / -2;
+  width: auto;
+  height: 7rem;
+  color: white;
+}
+
+.hideText {
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.paragraphs {
+  grid-column: 2 / span 6;
+  line-height: 2.75rem;
+
+  p {
+    margin: 4rem 0;
+
+    &:first-child {
+      margin-top: 6rem;
+    }
+  }
+}
