@@ -86,9 +86,8 @@ export const appearFromBottom = (target, { duration }) => {
     .timeline({
       scrollTrigger: {
         trigger: target,
-        start: () => "top-=300 bottom",
-        end: () => "top-=300 top",
-        toggleActions: "play none none reset",
+        start: () => "top bottom",
+        end: () => "top top",
       },
     })
     .from(target, {

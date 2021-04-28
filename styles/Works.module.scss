@@ -1,18 +1,9 @@
 
 .headerText {
-  width: auto;
-  height: 8rem;
-  color: white;
-  position: sticky;
-  top: calc(50% - 2.5rem);
-  flex-grow: 1;
-}
-
-.content {
   grid-column: 2 / -2;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  width: 100%;
+  height: auto;
+  color: white;
 }
 
 .hideText {
@@ -22,24 +13,17 @@
 }
 
 .worksList {
+  grid-column: 2 / -2;
   width: 100%;
   list-style-type: none;
-  margin-left: 4rem;
   padding: 0;
 
   li {
-    margin-bottom: 5rem;
-
-    &:first-child {
-      margin-top: -1.75rem;
-    }
-    &:last-child {
-      margin-bottom: 2rem;
-    }
+    margin: 5rem 0;
   }
 
   a {
-    font-size: 4rem;
+    font-size: 7rem;
     color: white;
     white-space: nowrap;
   }

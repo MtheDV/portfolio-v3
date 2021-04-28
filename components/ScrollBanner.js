@@ -19,6 +19,9 @@ const ScrollBanner = ({ text }) => {
         <h3>{text}</h3>
         <h3>{text}</h3>
         <h3>{text}</h3>
+        <h3>{text}</h3>
+        <h3>{text}</h3>
+        <h3>{text}</h3>
       </div>
     </section>
   );

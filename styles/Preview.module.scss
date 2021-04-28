@@ -6,7 +6,7 @@
   object-fit: cover;
   top: 0;
   left: 0;
-  transform: translate(6rem, calc(50vh - 15rem));
+  transform: translate(calc(100vw - 26rem), calc(50vh - 15rem));
   opacity: 0;
   pointer-events: none;
   box-shadow: 0 0 150px #121212;

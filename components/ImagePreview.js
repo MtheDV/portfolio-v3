@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { animatePreview, transform } from "../animations/animations";
+import {animatePreview, opacity, transform} from "../animations/animations";
 // styles
 import previewStyles from "../styles/Preview.module.scss";
 
@@ -27,14 +27,13 @@ const ImagePreview = ({ imageLink, mouseX, mouseY, showPreview, rightSide }) => 
 
   return (
     <>
-      {imageLink && (
         <img
           className={previewStyles.preview}
           src={imageLink}
           alt="project preview"
           ref={imageRef}
+          style={{display: imageLink ? "block" : "none"}}
         />
-      )}
     </>
   );
 };

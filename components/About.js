@@ -1,10 +1,17 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import ImagePreview from "./ImagePreview";
 // styles
 import gridStyles from "../styles/Grid.module.scss";
 import aboutStyles from "../styles/About.module.scss";
+// animations
+import {appearFromBottom} from "../animations/animations";
 
 const About = ({ mouseX, mouseY }) => {
+  const aboutTitleRef = useRef();
+  useEffect(() => {
+    appearFromBottom(aboutTitleRef.current, { duration: 1 });
+  }, [aboutTitleRef]);
+
   const [currentImage, setCurrentImage] = useState(null);
   const setPreview = (name, display) => {
     setCurrentImage(name ? `/assets/images/${name}/${display}` : null);
@@ -17,6 +24,7 @@ const About = ({ mouseX, mouseY }) => {
         className={aboutStyles.headerText}
         onMouseOver={() => setPreview("about", "me.jpg")}
         onMouseLeave={() => setPreview(null, null)}
+        ref={aboutTitleRef}
       >
         <svg
           width="100%"

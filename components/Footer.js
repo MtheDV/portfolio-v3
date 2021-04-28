@@ -1,15 +1,21 @@
-import React from "react";
-import ScrollBanner from "./ScrollBanner";
+import React, {useEffect, useRef} from "react";
 // styles
 import gridStyles from "../styles/Grid.module.scss";
 import footerStyles from "../styles/Footer.module.scss";
+// animations
+import {appearFromBottom} from "../animations/animations";
 
 const Footer = () => {
+  const contactTitleRef = useRef();
+  useEffect(() => {
+    appearFromBottom(contactTitleRef.current, { duration: 1 });
+  }, [contactTitleRef]);
+
   return (
     <>
       <footer className={gridStyles.container}>
         <h2 className={footerStyles.hideText}>about me</h2>
-        <div className={footerStyles.headerText}>
+        <div className={footerStyles.headerText} ref={contactTitleRef}>
           <svg
             width="100%"
             height="100%"
