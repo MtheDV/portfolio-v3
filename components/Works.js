@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import ImagePreview from "./ImagePreview";
 // styles
 import gridStyles from "../styles/Grid.module.scss";
 import workStyles from "../styles/Works.module.scss";
 // animations
 import { appearFromBottom, scrollThroughWorks } from "../animations/animations";
-import ProjectPreview from "./ProjectPreview";
 
 const Works = ({ projects, mouseX, mouseY }) => {
   const worksListRef = useRef();
@@ -23,7 +23,7 @@ const Works = ({ projects, mouseX, mouseY }) => {
   return (
     <section className={gridStyles.container}>
       <h2 className={workStyles.hideText}>works</h2>
-      <div className={workStyles.content}>
+      <nav className={workStyles.content}>
         <div className={workStyles.headerText} ref={worksTitleRef}>
           <svg
             width="100%"
@@ -88,12 +88,13 @@ const Works = ({ projects, mouseX, mouseY }) => {
             </li>
           ))}
         </ul>
-      </div>
-      <ProjectPreview
+      </nav>
+      <ImagePreview
         imageLink={currentImage}
         mouseX={mouseX}
         mouseY={mouseY}
         showPreview={!!currentImage}
+        rightSide={false}
       />
     </section>
   );

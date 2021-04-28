@@ -15,10 +15,11 @@ export default function Home({ projects, mouseX, mouseY }) {
       </Head>
       <main>
         <Landing />
-        <ScrollBanner text={"CHECK ME OUT"}/>
-        <Works projects={projects} mouseX={mouseX} mouseY={mouseY}/>
-        <ScrollBanner text={"WHO AM I?"}/>
-        <About />
+        <ScrollBanner text={"CHECK ME OUT"} />
+        <Works projects={projects} mouseX={mouseX} mouseY={mouseY} />
+        <ScrollBanner text={"WHO AM I?"} />
+        <About mouseX={mouseX} mouseY={mouseY} />
+        <ScrollBanner text={"GET IN TOUCH"} />
       </main>
     </>
   );

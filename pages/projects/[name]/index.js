@@ -4,6 +4,8 @@ import Head from "next/head";
 // styles
 import gridStyles from "../../../styles/Grid.module.scss";
 import projectStyles from "../../../styles/Projects.module.scss";
+import About from "../../../components/About";
+import ScrollBanner from "../../../components/ScrollBanner";
 
 const Project = ({ project }) => {
   return (
@@ -15,7 +17,7 @@ const Project = ({ project }) => {
       <main className={gridStyles.container}>
         <section className={projectStyles.content}>
           <h1 className={projectStyles.title}>{project.display}</h1>
-          <p className={projectStyles.body}>{project.body}</p>
+          <p>{project.body}</p>
         </section>
         <section className={projectStyles.images} aria-label="Project Images">
         {
@@ -25,6 +27,7 @@ const Project = ({ project }) => {
         }
         </section>
       </main>
+      <ScrollBanner text={"GET IN TOUCH"} />
     </>
   );
 };

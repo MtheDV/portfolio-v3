@@ -50,13 +50,14 @@ export const glidingText = (target, { distance, duration }) => {
     .timeline({
       scrollTrigger: {
         trigger: target,
-        start: "top bottom",
-        end: "bottom top",
+        start: () => "top bottom",
+        end: () => "bottom top",
         scrub: true,
+        invalidateOnRefresh: false,
       },
     })
     .to(target, {
-      x: distance,
+      x: `${distance}rem`,
       duration: duration,
       ease: "slow",
     });

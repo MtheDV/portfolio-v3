@@ -8,7 +8,7 @@ import gridStyles from "../styles/Grid.module.scss";
 const ScrollBanner = ({ text }) => {
   const checkRef = useRef();
   useEffect(() => {
-    glidingText(checkRef.current, { distance: -500, duration: 3 });
+    glidingText(checkRef.current, { distance: -15, duration: 3 });
   }, [checkRef]);
 
   return (

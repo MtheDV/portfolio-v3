@@ -1,15 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { animatePreview, transform } from "../animations/animations";
 // styles
 import previewStyles from "../styles/Preview.module.scss";
 
-const ProjectPreview = ({ imageLink, mouseX, mouseY, showPreview }) => {
+const ImagePreview = ({ imageLink, mouseX, mouseY, showPreview, rightSide }) => {
   const imageRef = useRef();
   useEffect(() => {
     if (imageLink) {
+      const x = mouseX / 4 + (rightSide ? window.innerWidth / 2 : 0);
+      const y = mouseY - imageRef.current.offsetHeight / 2;
       transform(imageRef.current, {
-        x: mouseX / 2 - imageRef.current.offsetWidth / 2,
-        y: mouseY - imageRef.current.offsetHeight / 2,
+        x,
+        y,
       });
     }
   }, [imageRef, mouseX, mouseY]);
@@ -37,4 +39,4 @@ const ProjectPreview = ({ imageLink, mouseX, mouseY, showPreview }) => {
   );
 };
 
-export default ProjectPreview;
+export default ImagePreview;

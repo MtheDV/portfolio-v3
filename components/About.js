@@ -1,13 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
+import ImagePreview from "./ImagePreview";
 // styles
 import gridStyles from "../styles/Grid.module.scss";
 import aboutStyles from "../styles/About.module.scss";
 
-const About = () => {
+const About = ({ mouseX, mouseY }) => {
+  const [currentImage, setCurrentImage] = useState(null);
+  const setPreview = (name, display) => {
+    setCurrentImage(name ? `/assets/images/${name}/${display}` : null);
+  };
+
   return (
     <section className={gridStyles.container}>
       <h2 className={aboutStyles.hideText}>about me</h2>
-      <div className={aboutStyles.headerText}>
+      <div
+        className={aboutStyles.headerText}
+        onMouseOver={() => setPreview("about", "me.jpg")}
+        onMouseLeave={() => setPreview(null, null)}
+      >
         <svg
           width="100%"
           height="100%"
@@ -81,18 +91,25 @@ const About = () => {
         <p>
           Although I’m constantly learning as a student, I’ve developed skills
           through self-directed projects and collaborated projects using
-          JavaScript, HTML5, CSS3, React.js, Node.js, Express.js, SCSS/SASS, GSAP.
-          Redesigning and reorganizing a university team formation tool allowing
-          me to grow in Django and Python, while exploring the MVC software design
-          pattern. ExpressJS, SQL, noSQL. With skills also in Java and Python
-          development.
+          JavaScript, HTML5, CSS3, React.js, Node.js, Express.js, SCSS/SASS,
+          GSAP. Redesigning and reorganizing a university team formation tool
+          allowing me to grow in Django and Python, while exploring the MVC
+          software design pattern. ExpressJS, SQL, noSQL. With skills also in
+          Java and Python development.
         </p>
         <p>
-          Design skills developed using the Affinity Toolset (Photo, Designer, and
-          Publisher) and Figma alongside minor knowledge with the Adobe Toolset
-          (Photoshop and Illustrator).
+          Design skills developed using the Affinity Toolset (Photo, Designer,
+          and Publisher) and Figma alongside minor knowledge with the Adobe
+          Toolset (Photoshop and Illustrator).
         </p>
       </div>
+      <ImagePreview
+        imageLink={currentImage}
+        mouseX={mouseX}
+        mouseY={mouseY}
+        showPreview={!!currentImage}
+        rightSide={true}
+      />
     </section>
   );
 };
