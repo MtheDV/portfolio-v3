@@ -23,11 +23,6 @@ const Works = ({ projects, mouseX, mouseY }) => {
   return (
     <section className={gridStyles.container}>
       <h2 className={workStyles.hideText}>works</h2>
-      <ProjectPreview
-        imageLink={currentImage}
-        mouseX={mouseX}
-        mouseY={mouseY}
-      />
       <div className={workStyles.content}>
         <div className={workStyles.headerText} ref={worksTitleRef}>
           <svg
@@ -94,6 +89,12 @@ const Works = ({ projects, mouseX, mouseY }) => {
           ))}
         </ul>
       </div>
+      <ProjectPreview
+        imageLink={currentImage}
+        mouseX={mouseX}
+        mouseY={mouseY}
+        showPreview={!!currentImage}
+      />
     </section>
   );
 };

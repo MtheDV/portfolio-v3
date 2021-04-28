@@ -9,6 +9,7 @@ body {
   position: relative;
   z-index: 0;
   background-color: #121212;
+  font-size: 1vw;
 }
 
 h1 {
@@ -18,6 +19,12 @@ h1 {
 }
 .intro-text {
   grid-column: 1 / -1;
+}
+
+h3 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 a {

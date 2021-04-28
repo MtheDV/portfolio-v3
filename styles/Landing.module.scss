@@ -1,6 +1,6 @@
 
 .intro_text_star {
-  grid-column: 4 / -4;
+  grid-column: 5 / -5;
   width: 100%;
   height: auto;
   margin: calc(50vh - 15rem) 0 0;
@@ -8,7 +8,7 @@
 }
 
 .sub {
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

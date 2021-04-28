@@ -45,17 +45,39 @@ export const opacity = (target, { final, duration }) => {
     );
 };
 
+export const glidingText = (target, { distance, duration }) => {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: target,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    })
+    .to(target, {
+      x: distance,
+      duration: duration,
+      ease: "slow",
+    });
+};
+
 export const animatePreview = (target, { skewX, skewY, duration }) => {
-  gsap.timeline().fromTo(target, {
-    opacity: 0,
-    skewX: skewX,
-    skewY: skewY
-  }, {
-    opacity: 1,
-    skewX: 0,
-    skewY: 0,
-    duration: duration,
-  });
+  gsap.timeline().fromTo(
+    target,
+    {
+      opacity: 0,
+      skewX: skewX,
+      skewY: skewY,
+    },
+    {
+      opacity: 1,
+      skewX: 0,
+      skewY: 0,
+      duration: duration,
+      ease: "back",
+    }
+  );
 };
 
 export const appearFromBottom = (target, { duration }) => {
@@ -63,8 +85,9 @@ export const appearFromBottom = (target, { duration }) => {
     .timeline({
       scrollTrigger: {
         trigger: target,
-        start: () => "center bottom",
-        end: () => "center top",
+        start: () => "top-=300 bottom",
+        end: () => "top-=300 top",
+        toggleActions: "play none none reset",
       },
     })
     .from(target, {
@@ -148,7 +171,6 @@ export const scrollThroughWorks = (targets) => {
         child,
         {
           opacity: 0,
-          duration: 0.5,
         },
         {
           opacity: 1,
@@ -156,7 +178,7 @@ export const scrollThroughWorks = (targets) => {
       )
       .to(child, {
         opacity: 0,
-        delay: 0.5,
+        delay: 1,
       });
   }
 };
