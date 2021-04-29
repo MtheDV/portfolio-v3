@@ -1,7 +1,9 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CSSRulePlugin);
 
 export const spin = (target, { amount, duration, repeat }) => {
   gsap.to(target, {
@@ -45,6 +47,42 @@ export const opacity = (target, { final, duration }) => {
     );
 };
 
+export const lineAppear = (target, { duration, delay }) => {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: target,
+        start: "center bottom",
+        end: "center top",
+      },
+    })
+    .from(target, {
+      width: 0,
+      duration: duration,
+      delay: delay,
+    });
+};
+
+export const animateHeader = (targets) => {
+  let timeline = gsap.timeline().from(targets[0], {
+    width: 0,
+    duration: 0.5,
+  });
+  timeline.pause();
+
+  ScrollTrigger.create({
+    trigger: "#landing",
+    start: "top+=5 bottom",
+    end: "top+=5 top",
+    onLeave: () => {
+      timeline.play();
+    },
+    onEnterBack: () => {
+      timeline.reverse();
+    },
+  });
+};
+
 export const glidingText = (target, { distance, duration }) => {
   gsap
     .timeline({
@@ -81,7 +119,7 @@ export const animatePreview = (target, { skewX, skewY, duration }) => {
   );
 };
 
-export const appearFromBottom = (target, { duration }) => {
+export const appearFromBottom = (target, { duration, y }) => {
   gsap
     .timeline({
       scrollTrigger: {
@@ -93,7 +131,7 @@ export const appearFromBottom = (target, { duration }) => {
     .from(target, {
       opacity: 0,
       skewY: 10,
-      y: target.offsetHeight * 2,
+      y: y || target.offsetHeight * 2,
       duration: duration,
     });
 };
@@ -118,7 +156,7 @@ export const eachShrink = (targets, amount) => {
     let playable = true;
     let timelineShrink = gsap.timeline({
       paused: true,
-      onComplete: (args) => {
+      onComplete: () => {
         playable = true;
       },
     });
@@ -142,13 +180,15 @@ export const eachShrink = (targets, amount) => {
     let timelineScroll = gsap.timeline({
       scrollTrigger: {
         trigger: value,
-        start: () => "center 25%",
-        end: () => "center top",
+        start: () => "bottom top+=300",
+        end: () => "bottom top",
+        invalidateOnRefresh: false,
         scrub: true,
       },
     });
     timelineScroll.to(value, {
       y: -1 * Math.random() * 0.25 - 0.25,
+      skewY: -10,
       duration: 2,
       ease: "none",
     });

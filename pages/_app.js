@@ -22,9 +22,8 @@ function MyApp({ Component, pageProps }) {
   const { x, y, handleMouseMove, handleMouseLeave } = useMouseMove();
   return (
     <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-      <Header />
+      <Header mouseX={x} mouseY={y} />
       <Component {...pageProps} mouseX={x} mouseY={y} />
-      <Footer />
       <Background mouseX={x} mouseY={y} />
     </div>
   );

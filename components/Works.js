@@ -21,7 +21,7 @@ const Works = ({ projects, mouseX, mouseY }) => {
   };
 
   return (
-    <section className={gridStyles.container}>
+    <section className={gridStyles.container} id={"works"}>
       <h2 className={workStyles.hideText}>works</h2>
       <div className={workStyles.headerText} ref={worksTitleRef}>
         <svg
@@ -37,6 +37,7 @@ const Works = ({ projects, mouseX, mouseY }) => {
             strokeLinejoin: "round",
             strokeMiterlimit: 2,
           }}
+          aria-label="Works"
         >
           <g transform="matrix(1,0,0,1,-58891,-23062)">
             <g transform="matrix(1,0,0,1,52427,22822)">
@@ -83,7 +84,7 @@ const Works = ({ projects, mouseX, mouseY }) => {
             onMouseOver={() => setPreview(project.name, "slide1.jpg")}
             onMouseLeave={() => setPreview(null, null)}
           >
-            <Link href={`/projects/${project.name}`}>{project.display}</Link>
+            <Link href={`/projects/${project.name}`}><a>{project.display}</a></Link>
           </li>
         ))}
       </ul>

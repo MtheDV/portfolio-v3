@@ -1,8 +1,12 @@
 
-.sticky {
-  position: sticky !important; // :(
-  top: 3rem;
-  z-index: 40 !important; // :(
+@import "mixins";
+
+.fixed {
+  position: fixed !important;
+  top: 0;
+  z-index: 40 !important;
+  background-color: #171717;
+  clip-path: inset(0 0 0 0);
 }
 
 .header {
@@ -13,8 +17,10 @@
   align-items: center;
   width: 100%;
   height: 1.5rem;
+  margin: 2rem 0;
 
   img {
+    padding-top: 0.5rem;
     width: 1.75rem;
     height: auto;
   }
@@ -25,4 +31,13 @@
       height: 0;
     }
   }
+}
+
+.line {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 0.15rem;
+  background-color: white;
+  position: relative;
+  z-index: 40;
 }

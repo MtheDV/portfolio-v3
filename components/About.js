@@ -1,10 +1,10 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ImagePreview from "./ImagePreview";
 // styles
 import gridStyles from "../styles/Grid.module.scss";
 import aboutStyles from "../styles/About.module.scss";
 // animations
-import {appearFromBottom} from "../animations/animations";
+import { appearFromBottom } from "../animations/animations";
 
 const About = ({ mouseX, mouseY }) => {
   const aboutTitleRef = useRef();
@@ -18,14 +18,9 @@ const About = ({ mouseX, mouseY }) => {
   };
 
   return (
-    <section className={gridStyles.container}>
+    <section className={gridStyles.container} id={"about"}>
       <h2 className={aboutStyles.hideText}>about me</h2>
-      <div
-        className={aboutStyles.headerText}
-        onMouseOver={() => setPreview("about", "me.jpg")}
-        onMouseLeave={() => setPreview(null, null)}
-        ref={aboutTitleRef}
-      >
+      <div className={aboutStyles.headerText} ref={aboutTitleRef}>
         <svg
           width="100%"
           height="100%"
@@ -39,6 +34,7 @@ const About = ({ mouseX, mouseY }) => {
             strokeLinejoin: "round",
             strokeMiterlimit: 2,
           }}
+          aria-label="About me"
         >
           <g transform="matrix(1,0,0,1,-58893,-24215)">
             <g transform="matrix(1,0,0,1,52427,23969.8)">
@@ -90,7 +86,11 @@ const About = ({ mouseX, mouseY }) => {
           </g>
         </svg>
       </div>
-      <div className={aboutStyles.paragraphs}>
+      <div
+        className={aboutStyles.paragraphs}
+        onMouseOver={() => setPreview("about", "me.jpg")}
+        onMouseLeave={() => setPreview(null, null)}
+      >
         <p>
           Web developer and designer. Currently attending the University of
           British Columbia pursuing a Bachelors in Computer Science. Located in

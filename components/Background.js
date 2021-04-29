@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 // styles
 import backgroundStyles from "../styles/Background.module.scss";
-import { transform, animateBackground } from "../animations/animations";
+import { transform } from "../animations/animations";
 
 const Background = ({ mouseX, mouseY }) => {
   const orbRef = useRef();

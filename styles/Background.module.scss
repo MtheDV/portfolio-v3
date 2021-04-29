@@ -1,6 +1,4 @@
 
-$black: #121212;
-
 .background {
   width: 100vw;
   height: 100vh;
@@ -8,7 +6,6 @@ $black: #121212;
   top: 0;
   left: 0;
   z-index: 0;
-  background-color: $black;
 }
 
 .orb {
@@ -20,4 +17,5 @@ $black: #121212;
   background-image: linear-gradient(to right, #FF2424, #7242FF);
   border-radius: 50%;
   filter: blur(100px);
+  opacity: 0.5;
 }
