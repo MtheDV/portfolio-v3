@@ -154,6 +154,18 @@ export const appearFromBottom = (target, { duration, y }) => {
     });
 };
 
+export const eachAppear = (targets, {duration}) => {
+  const values = document.getElementsByClassName(targets);
+  for (let value of values) {
+    gsap.timeline()
+      .from(value, {
+        opacity: 0,
+        duration: duration,
+        delay: 0.75,
+      });
+  }
+}
+
 export const eachShrink = (targets, amount) => {
   const values = document.getElementsByClassName(targets);
   for (let value of values) {

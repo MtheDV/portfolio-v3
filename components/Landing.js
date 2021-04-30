@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import landingStyles from "../styles/Landing.module.scss";
 import gridStyles from "../styles/Grid.module.scss";
 // animations
-import { spin, eachShrink, opacity } from "../animations/animations";
+import {spin, eachShrink, opacity, eachAppear} from "../animations/animations";
 
 const Landing = () => {
   const starRef = useRef();
@@ -11,6 +11,7 @@ const Landing = () => {
   useEffect(() => {
     spin(starRef.current, { duration: 10 });
     eachShrink("landingLetter", 0.8);
+    eachAppear("landingLetter", {duration: 2});
     opacity(subRef.current, { final: 0, duration: 2 });
     opacity(starRef.current, { final: 0, duration: 2 });
   }, [starRef, subRef]);
