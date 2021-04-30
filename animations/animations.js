@@ -1,9 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(CSSRulePlugin);
 
 export const spin = (target, { amount, duration, repeat }) => {
   gsap.to(target, {
@@ -56,24 +54,30 @@ export const lineAppear = (target, { duration, delay }) => {
         end: "center top",
       },
     })
-    .from(target, {
+    .fromTo(target, {
       width: 0,
+    }, {
+      width: "100vw",
       duration: duration,
       delay: delay,
     });
 };
 
 export const animateHeader = (targets) => {
-  let timeline = gsap.timeline().from(targets[0], {
+  let timeline = gsap.timeline().fromTo(targets[0], {
     width: 0,
+  }, {
+    width: "100vw",
     duration: 0.5,
   });
   timeline.pause();
 
   ScrollTrigger.create({
     trigger: "#landing",
-    start: "top+=5 bottom",
-    end: "top+=5 top",
+    start: "20 bottom",
+    end: "30 top",
+    invalidateOnRefresh: true,
+    autoRefreshEvents: "DOMContentLoaded,load",
     onLeave: () => {
       timeline.play();
     },
@@ -81,6 +85,20 @@ export const animateHeader = (targets) => {
       timeline.reverse();
     },
   });
+};
+
+export const appearTray = (target, { direction }) => {
+  if (direction) {
+    gsap.timeline().to(target, {
+      x: 0,
+      duration: 0.5,
+    });
+  } else {
+    gsap.timeline().to(target, {
+      x: target.offsetWidth,
+      duration: 0.5,
+    });
+  }
 };
 
 export const glidingText = (target, { distance, duration }) => {
@@ -131,23 +149,9 @@ export const appearFromBottom = (target, { duration, y }) => {
     .from(target, {
       opacity: 0,
       skewY: 10,
-      y: y || target.offsetHeight * 2,
+      y: y || target.offsetHeight * 1.5,
       duration: duration,
     });
-};
-
-export const animateBackground = (target, { gradient1, gradient2 }) => {
-  gsap.fromTo(
-    target,
-    { backgroundImage: gradient1 },
-    {
-      backgroundImage: gradient2,
-      repeat: -1,
-      yoyo: true,
-      duration: 0,
-      ease: "elastic",
-    }
-  );
 };
 
 export const eachShrink = (targets, amount) => {

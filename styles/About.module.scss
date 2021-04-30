@@ -1,4 +1,6 @@
 
+@import "mixins";
+
 .headerText {
   grid-column: 2 / -2;
   width: 100%;
@@ -15,6 +17,9 @@
 .paragraphs {
   grid-column: 2 / span 6;
   line-height: 2.75rem;
+  @include mobile() {
+    grid-column: 2 / -2;
+  }
 
   p {
     margin: 4rem 0;

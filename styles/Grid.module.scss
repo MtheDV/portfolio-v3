@@ -5,8 +5,7 @@ $grid-width: 7rem;
   position: relative;
   z-index: 20;
   display: grid;
-  grid-template-columns: minmax(2.5rem, 1fr) repeat(12, minmax(0.75rem, $grid-width)) minmax(2.5rem, 1fr) ;
+  grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, $grid-width)) minmax(1rem, 1fr) ;
   column-gap: 1.25rem;
-  justify-content: center;
   height: auto;
 }

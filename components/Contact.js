@@ -12,7 +12,7 @@ const Contact = () => {
   }, [contactTitleRef]);
 
   return (
-    <section className={gridStyles.container} id={"contact"}>
+    <section className={`${gridStyles.container} ${contactStyles.overflow}`} id={"contact"}>
       <h2 className={contactStyles.hideText}>about me</h2>
       <div className={contactStyles.headerText} ref={contactTitleRef}>
         <svg

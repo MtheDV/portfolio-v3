@@ -1,4 +1,6 @@
 
+@import "mixins";
+
 .headerText {
   grid-column: 2 / -2;
   width: 100%;
@@ -20,11 +22,18 @@
 
   li {
     margin: 5rem 0;
+    @include mobile() {
+      margin: 3rem 0;
+    }
   }
 
   a {
     font-size: 7rem;
     color: white;
     white-space: nowrap;
+    @include mobile() {
+      font-size: 4rem;
+      white-space: normal;
+    }
   }
 }

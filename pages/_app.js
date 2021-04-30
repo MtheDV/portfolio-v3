@@ -1,8 +1,6 @@
 import "../styles/globals.scss";
 import Header from "../components/Header";
-import Background from "../components/Background";
 import { useState } from "react";
-import Footer from "../components/Footer";
 
 const useMouseMove = () => {
   const [state, setState] = useState({ x: 0, y: 0 });
@@ -24,7 +22,6 @@ function MyApp({ Component, pageProps }) {
     <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <Header mouseX={x} mouseY={y} />
       <Component {...pageProps} mouseX={x} mouseY={y} />
-      <Background mouseX={x} mouseY={y} />
     </div>
   );
 }

@@ -1,4 +1,6 @@
 
+@import "mixins";
+
 .hide_overflow {
   overflow-x: hidden;
 }
@@ -16,6 +18,10 @@
     font-size: 4rem;
     white-space: nowrap;
     margin: 0 2rem 0 0;
+
+    @include mobile() {
+      font-size: 2rem;
+    }
 
     &:last-of-type {
       margin: 0;

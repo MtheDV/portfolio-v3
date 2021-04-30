@@ -1,4 +1,6 @@
 
+@import "mixins";
+
 .preview {
   position: fixed;
   width: 20rem;
@@ -10,4 +12,7 @@
   opacity: 0;
   pointer-events: none;
   box-shadow: 0 0 150px #121212;
+  @include mobile() {
+    display: none !important;
+  }
 }
