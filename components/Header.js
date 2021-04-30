@@ -78,7 +78,6 @@ const Header = () => {
           />
         </button>
         </div>
-        <div className={headerStyles.line} ref={lineRef} />
         <nav className={headerStyles.tray_nav} aria-label="navigation">
           <Link href="/#works">
             <a onClick={(event) => clickNav(event, "works")}>works.</a>

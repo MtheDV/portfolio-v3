@@ -1,5 +1,24 @@
 export const projects = [
   {
+    name: "postn",
+    display: "postn",
+    body:
+      "Postn is a discussion forum website. It allows registered users to participate in online discussions in a similar format to Reddit. Unregistered users will be allowed to view the discussions but will be unable to comment or create their own posts. Users can register, create or search through discussions (image or text-based), and reply to posts/comments. Password recovery and admin privileges, enabling and disabling accounts, is built in alongside error handling and messaging. The UI and UX was also designed and developed by me.",
+    tools:
+      "React.js, Tailwind CSS, Headless UI, Axios, Node JS, Express JS, Sequelize ORM",
+    content: [
+      "slide1.jpg",
+      "slide2.jpg",
+      "slide3.jpg",
+      "slide4.jpg",
+      "slide5.jpg",
+      "slide6.jpg",
+      "slide7.jpg",
+    ],
+    link: "https://github.com/JadenBalogh/cosc360-project",
+    link_title: "Github",
+  },
+  {
     name: "constructed_images",
     display: "constructed images",
     body:
@@ -21,10 +40,7 @@ export const projects = [
     body:
       "A simple React.js application that explored the use of react hooks, effects, and props while replicating the rock paper scissors game. The use of css animations were involved all the while learning SCSS. The background is blurred and dynamic.",
     tools: "HTML/CSS, Javascript, React.js, Affinity Designer, Webstorm",
-    content: [
-      "slide1.jpg",
-      "slide2.jpg",
-      "slide3.jpg"],
+    content: ["slide1.jpg", "slide2.jpg", "slide3.jpg"],
     link: "https://mdv-rock-paper-scissors.netlify.app/",
     link_title: "Website",
   },
@@ -51,7 +67,8 @@ export const projects = [
     display: "electric car ecommerce",
     body:
       "A project created as part of a university class. Required to build an ecommerce website within a 4 person team following specific guidelines. The group decided on creating an electric vehicle ecommerce shop where users can browse a wide selection of vehicles, add them to their carts, place orders, leave reviews, and if customers leave the shop their carts will be saved. Customers can log in and admins can view pages not accessible to customers. Stock can be managed and profits monitored.",
-    tools: "HTML/CSS, Java Server Pages (JSP), SQL, Twitter Bootstrap, Webstorm",
+    tools:
+      "HTML/CSS, Java Server Pages (JSP), SQL, Twitter Bootstrap, Webstorm",
     content: [
       "slide1.jpg",
       "slide2.jpg",

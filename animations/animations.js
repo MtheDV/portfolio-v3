@@ -75,7 +75,7 @@ export const animateHeader = (targets) => {
   ScrollTrigger.create({
     trigger: "#landing",
     start: "20 bottom",
-    end: "30 top",
+    end: "20 top",
     invalidateOnRefresh: true,
     autoRefreshEvents: "DOMContentLoaded,load",
     onLeave: () => {
