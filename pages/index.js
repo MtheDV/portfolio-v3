@@ -60,7 +60,7 @@ export default function Home({ projects, mouseX, mouseY }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(`${server}/api/projects`);
   const projects = await res.json();
 

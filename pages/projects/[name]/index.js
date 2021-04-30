@@ -87,7 +87,7 @@ const Project = ({project}) => {
   );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const res = await fetch(`${server}/api/projects/${context.params.name}`);
   const project = await res.json();
 
@@ -95,19 +95,6 @@ export const getStaticProps = async (context) => {
     props: {
       project,
     },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const res = await fetch(`${server}/api/projects`);
-  const projects = await res.json();
-
-  const projectNames = projects.map((project) => project.name);
-  const paths = projectNames.map((name) => ({params: {name: name}}));
-
-  return {
-    paths,
-    fallback: false,
   };
 };
 
