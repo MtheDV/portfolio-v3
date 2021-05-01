@@ -19,9 +19,7 @@ const Project = ({project}) => {
   return (
     <>
       <Head>
-        <title>mathew de vin</title>
-        <meta name="description"
-              content="Hello my name is Mathew de Vin! Designer and developer. This is my portfolio where you can get a small glimpse of what I do"/>
+        <title>Mathew de Vin</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -39,16 +37,16 @@ const Project = ({project}) => {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="manifest" href="/site.webmanifest" />
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://mathewdevin.com"/>
-        <meta property="og:title" content="Mathew de Vin"/>
+        <meta property="og:title" content="Mathew de Vin - Portfolio"/>
         <meta property="og:description"
               content="Hello my name is Mathew de Vin! Designer and developer. This is my portfolio where you can get a small glimpse of who I am and what I do"/>
         <meta property="og:image" content="/assets/images/preview.jpg"/>
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:url" content="https://mathewdevin.com"/>
-        <meta property="twitter:title" content="Mathew de Vin"/>
+        <meta property="twitter:title" content="Mathew de Vin - Portfolio"/>
         <meta property="twitter:description"
               content="Hello my name is Mathew de Vin! Designer and developer. This is my portfolio where you can get a small glimpse of who I am and what I do"/>
         <meta property="twitter:image" content="/assets/images/preview.jpg"/>

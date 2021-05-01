@@ -55,8 +55,10 @@
 
 .tray {
   position: fixed !important;
-  left: 0;
+  left: 100vw;
   top: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 50 !important;
   background-color: #171717;
   display: none !important;
@@ -76,7 +78,7 @@
     margin: 2rem 0;
 
     img {
-      padding-top: 0.2rem;
+      padding-top: 0.3rem;
       width: 1.75rem;
       height: auto;
     }
@@ -106,7 +108,7 @@
 
 .line {
   grid-column: 1 / -1;
-  width: 100vw;
+  width: 0;
   height: 0.15rem;
   background-color: white;
   position: relative;

@@ -54,19 +54,42 @@ export const lineAppear = (target, { duration, delay }) => {
         end: "center top",
       },
     })
-    .fromTo(target, {
-      width: 0,
-    }, {
-      width: "100vw",
-      duration: duration,
-      delay: delay,
-    });
+    .fromTo(
+      target,
+      {
+        width: 0,
+      },
+      {
+        width: "100vw",
+        duration: duration,
+        delay: delay,
+      }
+    );
+};
+
+export const moveNoise = (target) => {
+  gsap
+    .timeline()
+    .to(target, {
+      x: Math.random() * 20 - 10,
+      y: Math.random() * 20 - 10,
+      duration: 0.01,
+    })
+    .to(target, {
+      x: Math.random() * 20 - 10,
+      y: Math.random() * 20 - 10,
+      duration: 0.01,
+    })
+    .to(target, {
+      x: Math.random() * 20 - 10,
+      y: Math.random() * 20 - 10,
+      duration: 0.01,
+    })
+    .repeat(-1);
 };
 
 export const animateHeader = (targets) => {
-  let timeline = gsap.timeline().fromTo(targets[0], {
-    width: 0,
-  }, {
+  let timeline = gsap.timeline().to(targets[0], {
     width: "100vw",
     duration: 0.5,
   });
@@ -90,12 +113,12 @@ export const animateHeader = (targets) => {
 export const appearTray = (target, { direction }) => {
   if (direction) {
     gsap.timeline().to(target, {
-      x: 0,
+      x: "-100vw",
       duration: 0.5,
     });
   } else {
     gsap.timeline().to(target, {
-      x: target.offsetWidth,
+      x: 0,
       duration: 0.5,
     });
   }
@@ -154,17 +177,16 @@ export const appearFromBottom = (target, { duration, y }) => {
     });
 };
 
-export const eachAppear = (targets, {duration}) => {
+export const eachAppear = (targets, { duration }) => {
   const values = document.getElementsByClassName(targets);
   for (let value of values) {
-    gsap.timeline()
-      .to(value, {
-        opacity: 1,
-        duration: duration,
-        delay: 0.75,
-      });
+    gsap.timeline().to(value, {
+      opacity: 1,
+      duration: duration,
+      delay: 0.75,
+    });
   }
-}
+};
 
 export const eachShrink = (targets, amount) => {
   const values = document.getElementsByClassName(targets);

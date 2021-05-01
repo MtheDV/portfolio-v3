@@ -1,6 +1,7 @@
 import "../styles/globals.scss";
 import Header from "../components/Header";
 import { useState } from "react";
+import Noise from "../components/Noise";
 
 const useMouseMove = () => {
   const [state, setState] = useState({ x: 0, y: 0 });
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
   const { x, y, handleMouseMove, handleMouseLeave } = useMouseMove();
   return (
     <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+      <Noise />
       <Header mouseX={x} mouseY={y} />
       <Component {...pageProps} mouseX={x} mouseY={y} />
     </div>

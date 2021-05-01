@@ -6,7 +6,7 @@ const Custom404 = () => {
   return (
     <section className={customStyles._404}>
       <img src={"assets/images/sad.svg"} alt="sad face" />
-      <h3>Couldn't find what you were looking for</h3>
+      <h3>couldn't find what you were looking for</h3>
     </section>
   );
 };
