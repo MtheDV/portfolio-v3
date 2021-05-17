@@ -1,9 +1,9 @@
 import "../styles/globals.scss";
-import { useState } from "react";
-import { SwitchTransition, Transition } from "react-transition-group";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Header from "../components/Header";
 import Noise from "../components/Noise";
-import { pageEnter, pageExit } from "../animations/animations";
+import Loading from "../components/Loading";
 
 const useMouseMove = () => {
   const [state, setState] = useState({ x: 0, y: 0 });
@@ -19,33 +19,31 @@ const useMouseMove = () => {
   return { x: state.x, y: state.y, handleMouseMove, handleMouseLeave };
 };
 
-const enter = (node) => {
-  pageEnter(node);
-};
-
-const exit = (node) => {
-  pageExit(node);
-};
-
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps }) {
   const { x, y, handleMouseMove, handleMouseLeave } = useMouseMove();
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const loadingOff = () => {
+      setLoading(false);
+    }
+    const loadingOn = () => {
+      setLoading(true);
+    }
+    router.events.on("routeChangeStart", loadingOn);
+    router.events.on("routeChangeComplete", loadingOff);
+
+    return () => {
+      router.events.off("routeChangeStart", loadingOn);
+      router.events.off("routeChangeComplete", loadingOff);
+    };
+  }, []);
   return (
     <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <Noise />
+      <Loading mouseX={x} mouseY={y} useLoading={loading} />
       <Header />
-      <SwitchTransition mode={"out-in"}>
-        <Transition
-          key={router.pathname}
-          timeout={500}
-          in={true}
-          onEnter={enter}
-          onExit={exit}
-          mountOnEnter={true}
-          unmountOnExit={true}
-        >
-          <Component {...pageProps} mouseX={x} mouseY={y} />
-        </Transition>
-      </SwitchTransition>
+      <Component {...pageProps} mouseX={x} mouseY={y} />
     </div>
   );
 }

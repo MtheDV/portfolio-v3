@@ -13,7 +13,7 @@ const Contact = () => {
 
   return (
     <section className={`${gridStyles.container} ${contactStyles.overflow}`} id={"contact"}>
-      <h2 className={contactStyles.hideText}>about me</h2>
+      <h3 className={contactStyles.hideText}>about me</h3>
       <div className={contactStyles.headerText} ref={contactTitleRef}>
         <svg
           width="100%"

@@ -22,7 +22,7 @@ const Works = ({ projects, mouseX, mouseY }) => {
 
   return (
     <section className={gridStyles.container} id={"works"}>
-      <h2 className={workStyles.hideText}>works</h2>
+      <h3 className={workStyles.hideText}>works</h3>
       <div className={workStyles.headerText} ref={worksTitleRef}>
         <svg
           width="100%"

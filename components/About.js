@@ -19,7 +19,7 @@ const About = ({ mouseX, mouseY }) => {
 
   return (
     <section className={gridStyles.container} id={"about"}>
-      <h2 className={aboutStyles.hideText}>about me</h2>
+      <h3 className={aboutStyles.hideText}>about me</h3>
       <div className={aboutStyles.headerText} ref={aboutTitleRef}>
         <svg
           width="100%"

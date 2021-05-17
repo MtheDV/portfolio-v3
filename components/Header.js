@@ -24,7 +24,7 @@ const Header = () => {
       router.push("/").then(() => {
         setTimeout(() => {
           jumpTo(type);
-        }, 500);
+        }, 10);
       });
     } else {
       jumpTo(type);

@@ -16,12 +16,12 @@ const ScrollBanner = ({ text }) => {
       className={`${gridStyles.container} ${bannerStyles.hide_overflow}`}
     >
       <div className={bannerStyles.section} ref={checkRef}>
-        <h3>{text}</h3>
-        <h3>{text}</h3>
-        <h3>{text}</h3>
-        <h3>{text}</h3>
-        <h3>{text}</h3>
-        <h3>{text}</h3>
+        <h2>{text}</h2>
+        <h2>{text}</h2>
+        <h2>{text}</h2>
+        <h2>{text}</h2>
+        <h2>{text}</h2>
+        <h2>{text}</h2>
       </div>
     </section>
   );
