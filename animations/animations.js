@@ -3,6 +3,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+export const pageEnter = (target) => {
+  gsap.from(target, {
+    duration: 0.5,
+    autoAlpha: 0,
+  });
+}
+
+export const pageExit = (target) => {
+  gsap.to(target, {
+    duration: 0.5,
+    autoAlpha: 0,
+  });
+}
+
 export const spin = (target, { amount, duration, repeat }) => {
   gsap.to(target, {
     rotate: amount || 360,
@@ -96,15 +110,14 @@ export const animateHeader = (targets) => {
   timeline.pause();
 
   ScrollTrigger.create({
-    trigger: "#landing",
-    start: "20 bottom",
-    end: "20 top",
+    start: "15 10",
+    end: "30 0",
     invalidateOnRefresh: true,
     autoRefreshEvents: "DOMContentLoaded,load",
     onLeave: () => {
       timeline.play();
     },
-    onEnterBack: () => {
+    onLeaveBack: () => {
       timeline.reverse();
     },
   });

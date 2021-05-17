@@ -12,6 +12,8 @@
   opacity: 0;
   pointer-events: none;
   box-shadow: 0 0 150px #121212;
+  border: white 2px solid;
+  border-radius: 2rem;
   @include mobile() {
     display: none !important;
   }

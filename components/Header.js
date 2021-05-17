@@ -15,11 +15,20 @@ const Header = () => {
   const router = useRouter();
   const clickNav = (event, type) => {
     event.preventDefault();
-    router.push("/").then(() => {
+    const jumpTo = (type) => {
       const scrollY = document.getElementById(type).offsetTop;
-      window.scrollTo({ top: scrollY - 125, behavior: "smooth" });
+      window.scrollTo({ top: scrollY - 125 });
       setShowTray(false);
-    });
+    };
+    if (router.pathname !== "/") {
+      router.push("/").then(() => {
+        setTimeout(() => {
+          jumpTo(type);
+        }, 500);
+      });
+    } else {
+      jumpTo(type);
+    }
   };
 
   const [showTray, setShowTray] = useState(false);
@@ -43,7 +52,7 @@ const Header = () => {
           <button
             className={headerStyles.header_tray_button}
             aria-label={"tray action"}
-            onClick={event => clickTray(event, true)}
+            onClick={(event) => clickTray(event, true)}
           >
             <img src="/assets/images/tray.svg" alt="tray" />
           </button>
@@ -66,17 +75,14 @@ const Header = () => {
         ref={trayRef}
       >
         <div className={headerStyles.tray_top}>
-        <img src="/assets/images/smile.svg" alt="logo" />
-        <button
-          className={headerStyles.tray_button}
-          aria-label={"tray action"}
-          onClick={event => clickTray(event, false)}
-        >
-          <img
-            src="/assets/images/exit_tray.svg"
-            alt="exit"
-          />
-        </button>
+          <img src="/assets/images/smile.svg" alt="logo" />
+          <button
+            className={headerStyles.tray_button}
+            aria-label={"tray action"}
+            onClick={(event) => clickTray(event, false)}
+          >
+            <img src="/assets/images/exit_tray.svg" alt="exit" />
+          </button>
         </div>
         <nav className={headerStyles.tray_nav} aria-label="navigation">
           <Link href="/#works">
