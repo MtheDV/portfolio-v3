@@ -34,16 +34,16 @@
   grid-column: 2 / -2;
   display: flex;
   flex-direction: column;
-  margin-top: -10rem;
-  @include mobile() {
-    margin-top: 4rem;
-  }
 
   img {
     width: 50%;
     height: auto;
+    border: white 2px solid;
+    border-radius: 2rem;
     @include mobile() {
       width: 100%;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
     }
 
     &:nth-child(odd) {

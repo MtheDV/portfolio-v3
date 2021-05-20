@@ -16,7 +16,7 @@ export const projects = [
       "slide7.jpg",
     ],
     link: "https://github.com/JadenBalogh/cosc360-project",
-    link_title: "Github",
+    link_title: "Github.",
   },
   {
     name: "constructed_images",
@@ -32,7 +32,7 @@ export const projects = [
       "slide5.jpg",
     ],
     link: "https://www.behance.net/gallery/112411015/Constructed-Images",
-    link_title: "Behance",
+    link_title: "Behance.",
   },
   {
     name: "rock_paper_scissors",
@@ -42,7 +42,7 @@ export const projects = [
     tools: "HTML/CSS, Javascript, React.js, Affinity Designer, Webstorm",
     content: ["slide1.jpg", "slide2.jpg", "slide3.jpg"],
     link: "https://mdv-rock-paper-scissors.netlify.app/",
-    link_title: "Website",
+    link_title: "Website.",
   },
   {
     name: "exodus",
@@ -60,7 +60,7 @@ export const projects = [
       "slide7.jpg",
     ],
     link: "https://play.google.com/store/apps/details?id=com.platypi.exodus",
-    link_title: "Google Play Store",
+    link_title: "Google Play Store.",
   },
   {
     name: "ecommerce",
@@ -81,6 +81,6 @@ export const projects = [
       "slide9.jpg",
     ],
     link: "https://github.com/MtheDV/ubco-cosc304-project",
-    link_title: "Github",
+    link_title: "Github.",
   },
 ];

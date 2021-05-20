@@ -70,6 +70,7 @@ const Project = ({project}) => {
           </a>
         </section>
         <section className={projectStyles.images} aria-label="Project Images">
+          <h2>Screenshots</h2>
           {project.content.map((image, index) => (
             <img
               key={index}
