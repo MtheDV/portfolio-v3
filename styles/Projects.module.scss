@@ -23,6 +23,11 @@
     margin-left: 0;
     font-weight: normal;
     font-size: 1.75rem;
+
+    &:after {
+      height: 0.1em;
+      bottom: calc(50% - 0.1em);
+    }
   }
 }
 

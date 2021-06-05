@@ -5,7 +5,7 @@
   grid-column: 2 / -2;
   width: 100%;
   height: auto;
-  margin: 5.5rem 0 0;
+  margin: clamp(5.5rem, calc(50vh - 20rem), calc(50vh - 20rem)) 0 0;
   color: white;
 
   @include mobile() {

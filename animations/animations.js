@@ -221,7 +221,7 @@ export const eachShrink = (targets, amount) => {
       .to(value, {
         scale: 1,
         rotation: 0,
-        duration: 0.5,
+        duration: 0.35,
         transformOrigin: "50% 50%",
       });
     value.addEventListener("mouseover", () => {
