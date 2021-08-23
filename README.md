@@ -1,11 +1,3 @@
-# Portfolio - V3
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c4db5305-e8ee-4c2a-9926-330a3d78bbcb/deploy-status)](https://app.netlify.com/sites/musing-ramanujan-f626cc/deploys)
-## Links
-### Portfolio live at https://mathewdevin.com
-
-## Tools
-### Built using
- - Next.js
- - React.js
- - SCSS
- - GSAP
+# currently live at https://github.com/MtheDV/portfolio-v4
+\
+**Third iteration of my personal portfolio website. Built using `Next.js`, `React.js`, `SCSS`, and `GSAP`**
